@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ymy.mapper.ScheduleMapper">
+    <select id="selectAllSchedule" resultType="com.ymy.pojo.Schedule">
+        SELECT * FROM scheduleinfo,USER WHERE scheduleinfo.`uid`=user.`id` ORDER BY scheduleinfo.`scheduletime`
+    </select>
+    <select id="selectByType" resultType="com.ymy.pojo.Schedule">
+        select * from scheduleinfo where type=#{type}
+    </select>
+    <insert id="insertSchedule" >
+        insert into scheduleinfo values (null,#{scheduletime},#{attendees},#{issue},#{content},#{type})
+    </insert>
+
+    <select id="search" resultType="com.ymy.pojo.Schedule">
+        SELECT * FROM scheduleinfo WHERE content LIKE #{searchCondition}
+    </select>
+
+
+    <select id="selectTotal" resultType="java.lang.Integer">
+        select count(*) from scheduleinfo where type=#{type}
+    </select>
+
+    <select id="selectCurrentPage" resultType="com.ymy.pojo.Schedule">
+        select * from scheduleinfo where type=#{type} order by scheduletime DESC limit #{start},#{pageSize}
+    </select>
+    <delete id="deleteSchedule">
+        delete from scheduleinfo where id=#{id}
+    </delete>
+</mapper>
