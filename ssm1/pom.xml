@@ -44,7 +44,7 @@
     <shiro.version>1.4.0</shiro.version>
 
     <!-- Test -->
-    <junit.version>4.12</junit.version>             <!-- junit 测试框架 -->
+    <junit.version>4.13.1</junit.version>             <!-- junit 测试框架 -->
   </properties>
 
 
