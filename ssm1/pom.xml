@@ -20,7 +20,7 @@
     <maven.compiler.target>1.8</maven.compiler.target>
 
     <!-- for Base -->
-    <spring.version>4.3.14.RELEASE</spring.version> <!-- Spring 相关 -->
+    <spring.version>6.0.0</spring.version> <!-- Spring 相关 -->
     <aspectj.version>1.8.10</aspectj.version>       <!-- Spring AOP 依赖 -->
     <log4j.version>1.2.17</log4j.version>           <!-- log4j 日志包 -->
     <slf4j.version>1.7.21</slf4j.version>           <!-- 日志框架 -->
